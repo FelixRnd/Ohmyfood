@@ -1,0 +1,54 @@
+.img_footer {
+    position: absolute;
+}
+
+.menu_container {
+    position: relative;
+    border-radius: 25px 25px 0px 0px;
+    background-color: $background;
+}
+
+.restaurant {
+    display: flex;
+    & h1 {
+        font-family: 'shrikhand';
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .img_footer img {
+            width: 100%;
+        }
+
+    .menu_container {
+        margin-top: 55%;
+        width: 100%;
+        height: 1400px;
+        & .restaurant {
+            & h1 {
+            font-size: 2.5rem; 
+            }
+            & .far {
+                font-size: 2rem;
+                margin-top: 8%;
+                margin-left: 15%;
+            }
+        }
+        .menu {
+            @include menu($colour-tertiary);
+        }
+
+        .plats {
+            @include plats;
+            &_principale {
+                @include principale;
+            }
+            &_accompagnement {
+                @include accompagnement;
+            }
+            &_prix {
+                @include prix;
+            }
+        }
+    }
+}

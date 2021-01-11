@@ -1,3 +1,13 @@
+@mixin bouton
+    border-radius: 35px
+    width: 50%
+    height: 40px
+    padding-top: 20px
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary)
+    text-align: center
+    margin: auto
+    color: white
+
 @mixin step($colour)
     display: flex
     background-color: $colour
@@ -7,3 +17,28 @@
     box-shadow: 5px 10px 10px rgb(230, 230, 230)
     border-radius: 20px
     font-weight: bold
+
+@mixin menu($colour)
+    padding-bottom: 1%
+    width: 10%
+    color: rgba(0, 0, 0, 0.650)
+    border-bottom: 3px solid $colour
+
+@mixin plats
+    background: white
+    border-radius: 15px
+    box-shadow: 5px 10px 10px rgb(230, 230, 230)
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    height: 75px
+@mixin principale
+    font-weight: bold
+    margin: 2%
+    width: 100%
+@mixin accompagnement
+    margin: 2%
+    width: 80%
+@mixin prix
+    font-weight: bold
+    margin: 2%
