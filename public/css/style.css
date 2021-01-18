@@ -63,15 +63,24 @@
   .menu_container .plats_principale {
     font-weight: bold;
     margin: 2%;
-    width: 100%;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .menu_container .plats_accompagnement {
     margin: 2%;
-    width: 80%;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .menu_container .plats_prix {
     font-weight: bold;
     margin: 2%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }
 body {
@@ -130,11 +139,6 @@ header img {
   align-items: center;
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .step .composez_list-number {
   display: flex;
   justify-content: center;
@@ -151,11 +155,6 @@ header img {
   align-items: center;
 }
 
-.step {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
 .step .degustez_list-number {
   display: flex;
   justify-content: center;
@@ -248,6 +247,7 @@ footer .description {
     font-weight: bold;
   }
   .step .choisissiez_list-number {
+    margin-left: -2%;
     margin-top: 5%;
     width: 25px;
     height: 25px;
@@ -273,6 +273,7 @@ footer .description {
     font-weight: bold;
   }
   .step .composez_list-number {
+    margin-left: -2%;
     margin-top: 5%;
     width: 25px;
     height: 25px;
@@ -298,6 +299,7 @@ footer .description {
     font-weight: bold;
   }
   .step .degustez_list-number {
+    margin-left: -2%;
     margin-top: 5%;
     width: 25px;
     height: 25px;
@@ -347,6 +349,176 @@ footer .description {
     display: flex;
     margin-left: 9%;
     margin-bottom: 4%;
+  }
+}
+@media screen and (min-width: 601px) {
+  .container {
+    margin: 6% 9% 6% 9%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  header .fas {
+    float: left;
+    margin-left: 35px;
+    margin-top: 35px;
+  }
+
+  header img {
+    width: 40%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+  }
+
+  .location .fas {
+    margin-top: 16px;
+    padding-right: 2%;
+  }
+
+  .explor {
+    height: 275px;
+  }
+
+  .bouton {
+    border-radius: 35px;
+    width: 50%;
+    height: 40px;
+    padding-top: 20px;
+    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+    text-align: center;
+    margin: auto;
+    color: white;
+    width: 25%;
+  }
+
+  .step {
+    height: 300px;
+  }
+  .step .choisissiez_list {
+    display: flex;
+    background-color: #f7f7f7;
+    width: 85%;
+    height: 80px;
+    margin-left: 8%;
+    box-shadow: 5px 10px 10px #e6e6e6;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 350px;
+    margin: auto;
+  }
+  .step .choisissiez_list-number {
+    margin-left: -2%;
+    margin-top: 5%;
+    width: 25px;
+    height: 25px;
+  }
+  .step .choisissiez_list i {
+    margin: 4%;
+  }
+  .step .choisissiez_list-titre {
+    margin-left: 10%;
+  }
+
+  .step {
+    height: 300px;
+  }
+  .step .composez_list {
+    display: flex;
+    background-color: #f7f7f7;
+    width: 85%;
+    height: 80px;
+    margin-left: 8%;
+    box-shadow: 5px 10px 10px #e6e6e6;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 350px;
+    margin: auto;
+  }
+  .step .composez_list-number {
+    margin-left: -2%;
+    margin-top: 5%;
+    width: 25px;
+    height: 25px;
+  }
+  .step .composez_list i {
+    margin: 4%;
+  }
+  .step .composez_list-titre {
+    margin-left: 10%;
+  }
+
+  .step {
+    height: 300px;
+  }
+  .step .degustez_list {
+    display: flex;
+    background-color: #9256dc1f;
+    width: 85%;
+    height: 80px;
+    margin-left: 8%;
+    box-shadow: 5px 10px 10px #e6e6e6;
+    border-radius: 20px;
+    font-weight: bold;
+    width: 350px;
+    margin: auto;
+  }
+  .step .degustez_list-number {
+    margin-left: -2%;
+    margin-top: 5%;
+    width: 25px;
+    height: 25px;
+  }
+  .step .degustez_list i {
+    margin: 4%;
+  }
+  .step .degustez_list-titre {
+    margin-left: 10%;
+  }
+
+  .resto {
+    height: 1950px;
+  }
+  .resto_titre {
+    padding-top: 4%;
+  }
+  .resto_list {
+    margin: auto;
+    margin-bottom: 5%;
+    width: 50%;
+    height: 375px;
+  }
+  .resto_list-description .titre {
+    margin-left: 4%;
+  }
+  .resto_list-description .coeur {
+    margin-right: 8%;
+    font-size: 2rem;
+  }
+  .resto_list-img img {
+    object-fit: cover;
+    border-radius: 25px 25px 0px 0px;
+    width: 100%;
+    height: 275px;
+  }
+
+  footer {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  footer .ohmyfood {
+    font-size: 2rem;
+    margin-left: 9%;
+    font-style: italic;
+    font-weight: bold;
+    font-family: "shrikhand";
+  }
+  footer .description {
+    display: flex;
+    margin-left: 9%;
   }
 }
 

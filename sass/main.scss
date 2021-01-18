@@ -67,7 +67,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 20px ;
+            border-radius: 20px;
             background-color: $colour-primary;
         }
         & i {
@@ -82,9 +82,6 @@ header {
 }
 
 .step {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     .composez_list {
         &-number {
             display: flex;
@@ -105,9 +102,6 @@ header {
 }
 
 .step {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     .degustez_list {
         &-number {
             display: flex;
@@ -187,6 +181,7 @@ footer {
         .choisissiez_list {
             @include step($background);
             &-number {
+                margin-left: -2%;
                 margin-top: 5%;
                 width: 25px;
                 height: 25px;
@@ -205,6 +200,7 @@ footer {
         .composez_list {
             @include step($background);
             &-number {
+                margin-left: -2%;
                 margin-top: 5%;
                 width: 25px;
                 height: 25px;
@@ -223,6 +219,7 @@ footer {
         .degustez_list {
             @include step(#9256dc1f);
             &-number {
+                margin-left: -2%;
                 margin-top: 5%;
                 width: 25px;
                 height: 25px;
@@ -273,6 +270,149 @@ footer {
             display: flex;
             margin-left: 9%;
             margin-bottom: 4%;
+        }
+    }
+}
+
+@media screen and (min-width: 601px) {
+    .container {
+       margin: 6% 9% 6% 9%;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    header .fas {
+        float: left;
+        margin-left: 35px;
+        margin-top: 35px;
+    }
+    header img {
+            width: 40%;
+            padding-top: 4%;
+            padding-bottom: 4%;
+        }
+    
+    .location .fas {
+            margin-top: 16px;
+            padding-right: 2%;
+        } 
+    
+    .explor {
+        height: 275px;
+    }
+
+    .bouton {
+    @include bouton;
+    width: 25%;
+    }
+
+    
+    .step {
+        height: 300px;
+        .choisissiez_list {
+            @include step($background);
+            width: 350px;
+            margin: auto;
+            &-number {
+                margin-left: -2%;
+                margin-top: 5%;
+                width: 25px;
+                height: 25px;
+            }
+            & i {
+                margin: 4%;
+            }
+            &-titre {
+                margin-left: 10%;
+            }
+        }
+    }
+
+    .step {
+        height: 300px;
+        .composez_list {
+            @include step($background);
+            width: 350px;
+            margin: auto;
+            &-number {
+                margin-left: -2%;
+                margin-top: 5%;
+                width: 25px;
+                height: 25px;
+            }
+            & i {
+                margin: 4%;
+            }
+            &-titre {
+                margin-left: 10%;
+            }
+        }
+    }
+
+    .step {
+        height: 300px;
+        .degustez_list {
+            @include step(#9256dc1f);
+            width: 350px;
+            margin: auto;
+            &-number {
+                margin-left: -2%;
+                margin-top: 5%;
+                width: 25px;
+                height: 25px;
+            }
+            & i {
+                margin: 4%;
+            }
+            &-titre {
+                margin-left: 10%;
+            }
+        }
+    }
+
+    .resto {
+        height: 1950px;
+        &_titre {
+            padding-top: 4%;
+        }
+        &_list {
+            margin: auto;
+            margin-bottom: 5%;
+            width: 50%;
+            height: 375px;
+            &-description .titre {
+                margin-left: 4%;
+            }
+            &-description .coeur {
+                margin-right: 8%;
+                font-size: 2rem;
+            }
+            &-img img {
+                object-fit: cover;
+                border-radius: 25px 25px 0px 0px;
+                width: 100%;
+                height: 275px;
+            }
+        }
+    }
+
+    footer {
+        height: 350px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        & .ohmyfood {
+            font-size: 2rem;
+            margin-left: 9%;
+            font-style: italic;
+            font-weight: bold;
+            font-family: 'shrikhand';
+        }
+        & .description {
+            display: flex;
+            margin-left: 9%;
         }
     }
 }
