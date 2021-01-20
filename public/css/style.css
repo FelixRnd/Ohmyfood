@@ -117,6 +117,22 @@ header img {
 .explor p {
   font-weight: 100;
 }
+.explor .bouton {
+  border-radius: 35px;
+  width: 50%;
+  height: 40px;
+  padding-top: 20px;
+  text-align: center;
+  margin: auto;
+  color: white;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  box-shadow: 5px 10px 10px #e6e6e6;
+  transform: scale(1);
+}
+.explor .bouton:hover {
+  background: linear-gradient(to bottom right, #FF8ADF, #9E5DEE);
+  box-shadow: 5px 10px 10px 3px #e1e1e1;
+}
 
 .step {
   display: flex;
@@ -187,6 +203,25 @@ header img {
   align-items: center;
   justify-content: space-between;
 }
+.resto_list-description .coeur {
+  width: 30px;
+  height: 25px;
+}
+.resto_list-description .far {
+  position: absolute;
+  color: black;
+}
+.resto_list-description .far:hover {
+  color: white;
+}
+.resto_list-description .fas {
+  position: relative;
+  opacity: 0;
+}
+.resto_list-description .fas:hover {
+  opacity: 1;
+  color: #9356DC;
+}
 
 footer {
   background-color: rgba(0, 0, 0, 0.699);
@@ -220,17 +255,6 @@ footer .description {
 
   .explor {
     height: 275px;
-  }
-
-  .bouton {
-    border-radius: 35px;
-    width: 50%;
-    height: 40px;
-    padding-top: 20px;
-    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-    text-align: center;
-    margin: auto;
-    color: white;
   }
 
   .step {
@@ -382,14 +406,6 @@ footer .description {
   }
 
   .bouton {
-    border-radius: 35px;
-    width: 50%;
-    height: 40px;
-    padding-top: 20px;
-    background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-    text-align: center;
-    margin: auto;
-    color: white;
     width: 25%;
   }
 
