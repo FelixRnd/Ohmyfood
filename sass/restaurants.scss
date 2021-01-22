@@ -1,8 +1,20 @@
-.img_footer {
-    position: absolute;
+header .fas {
+    float: left;
+    margin-left: 35px;
+    margin-top: 35px;
+}
+
+.photo_resto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
 }
 
 .menu_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     border-radius: 25px 25px 0px 0px;
     background-color: $background;
@@ -10,29 +22,54 @@
 
 .restaurant {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    width: 80%;
     & h1 {
         font-family: 'shrikhand';
+        margin-right: 2%
+    }
+}
+
+.bouton {
+    @include bouton;
+    &:hover {
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom right, lighten($colour-secondary, 4) 0%, lighten($colour-primary, 4) 100%);
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 250ms;
+        border-radius: 35px;
+        box-shadow: 5px 10px 10px 3px rgb(221, 221, 221);
     }
 }
 
 @media screen and (max-width: 600px) {
-    .img_footer img {
+    .header img {
             width: 100%;
+            position: absolute;
         }
 
     .menu_container {
-        margin-top: 55%;
+        margin-top: -5%;
         padding-bottom: 5%;
         width: 100%;
         & .restaurant {
             & h1 {
+            margin-right: 4%;
             font-size: 2.5rem; 
             }
             & .far {
                 font-size: 2rem;
-                margin-top: 8%;
-                margin-left: 10%;
             }
         }
         .menu {
@@ -53,3 +90,51 @@
         }
     }
 }
+
+@media screen and (min-width: 601px) {
+    .container {
+        margin: 0%;
+    }
+
+    header .fas {
+        font-size: 2em;
+    }
+    .header img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+    .menu_container {
+        margin-top: -5%;
+        padding-bottom: 5%;
+        width: 100%;
+        & .restaurant {
+            justify-content: center;
+            & h1 {
+            margin-right: 4%;
+            font-size: 2.5rem; 
+            }
+            & .far {
+                font-size: 2rem;
+            }
+        }
+    }
+        .menu {
+            @include menu($colour-tertiary);
+        }
+
+        .plats {
+            @include plats;
+            width: 500px;
+            &_principale {
+                @include principale;
+            }
+            &_accompagnement {
+                @include accompagnement;
+            }
+            &_prix {
+                @include prix;
+            }
+        }
+    }
