@@ -33,7 +33,7 @@ a {
 
 header {
     box-shadow: 0px 5px 5px rgb(204, 204, 204);
-    
+    display: flex;
     & img {
         display: flex;
         margin: auto;
@@ -90,6 +90,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             border-radius: 20px;
             background-color: $colour-primary;
         }
@@ -110,6 +111,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             border-radius: 20px ;
             background-color: $colour-primary;
         }
@@ -130,6 +132,7 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
             border-radius: 20px;
             background-color: $colour-primary;
         }
@@ -160,25 +163,26 @@ header {
             flex-direction: wrap;
             align-items: center;
             justify-content: space-between;
-            & .coeur {
-                width: 30px;
-                height: 25px;
-            }
-            & .far {
-                position: absolute;
-                color: black;
-                &:hover {
-                    color: white;
-                }
-            }
-            & .fas {
-                position: relative;
-                opacity: 0;
-                &:hover {
+            & .coeur{
+                & .far {
+                    position: absolute;
+                    color: black;
                     opacity: 1;
-                    color: $colour-primary;
+                    &:hover {
+                        color: white;
+                        opacity: 0;
+                    }
                 }
-            }
+                & .fas {
+                    position: relative;
+                    opacity: 0;
+                    transition: opacity 350ms;
+                    &:hover {
+                        opacity: 1;
+                        color: $colour-primary;
+                    }
+                }
+            }   
         }
     }
 }
@@ -220,8 +224,8 @@ footer {
         .choisissiez_list {
             @include step($background);
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -239,8 +243,8 @@ footer {
         .composez_list {
             @include step($background);
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -258,8 +262,8 @@ footer {
         .degustez_list {
             @include step(#9256dc1f);
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -315,7 +319,7 @@ footer {
 
 @media screen and (min-width: 601px) {
     .container {
-       margin: 6%;
+       margin: auto;
     }
 
     h2 {
@@ -323,7 +327,7 @@ footer {
     }
     
     header img {
-            width: 40%;
+            width: 30%;
             padding-top: 4%;
             padding-bottom: 4%;
         }
@@ -353,8 +357,8 @@ footer {
             width: 50%;
             margin: auto;
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -374,8 +378,8 @@ footer {
             width: 50%;
             margin: auto;
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -395,8 +399,8 @@ footer {
             width: 50%;
             margin: auto;
             &-number {
-                margin-left: -2%;
-                margin-top: 5%;
+                right: 10px;
+                top: 26px;
                 width: 25px;
                 height: 25px;
             }
@@ -410,16 +414,12 @@ footer {
     }
 
     .resto {
-        height: 1950px;
-        padding-bottom: 2%;
         &_titre {
             padding-top: 4%;
         }
         &_list {
-            margin: auto;
-            margin-bottom: 5%;
             width: 50%;
-            height: 375px;
+            margin-bottom: 2%;
             &-description .titre {
                 margin-left: 4%;
             }

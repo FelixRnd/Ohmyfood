@@ -1,7 +1,19 @@
-header .fas {
-    float: left;
-    margin-left: 35px;
-    margin-top: 35px;
+@keyframes plats{
+    0% {
+        transform: scaleY(0);
+    }
+
+    100% {
+        transform: scaleY(1);
+    }
+}
+
+header {
+    & a {
+        height: 100%;
+        margin-top: 5%;
+        padding-left: 5%;
+    }
 }
 
 .photo_resto img {
@@ -28,6 +40,11 @@ header .fas {
         font-family: 'shrikhand';
         margin-right: 2%
     }
+}
+
+.plats {
+    transform-origin: 0% 100%;
+    animation: plats 1150ms;
 }
 
 .bouton {
@@ -97,7 +114,7 @@ header .fas {
     }
 
     header .fas {
-        font-size: 2em;
+        font-size: 1.5em;
     }
     .header img {
             width: 100%;
