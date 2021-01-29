@@ -42,16 +42,83 @@ header a {
 .restaurant {
   display: flex;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   width: 80%;
 }
 .restaurant h1 {
   font-family: "shrikhand";
-  margin-right: 2%;
 }
 
-.plats {
+.menu_container {
+  margin-top: -5%;
+  padding-bottom: 5%;
+  width: 100%;
+}
+.menu_container .restaurant h1 {
+  margin-right: 4%;
+  font-size: 2.5rem;
+}
+.menu_container .restaurant .far {
+  font-size: 2rem;
+}
+.menu_container .menu {
+  padding-bottom: 1%;
+  margin: auto;
+  margin-bottom: 2%;
+  color: rgba(0, 0, 0, 0.65);
+  border-bottom: 3px solid #99E2D0;
+}
+.menu_container .plats {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 5px 10px 10px #e6e6e6;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  height: 75px;
   transform-origin: 0% 100%;
   animation: plats 1150ms;
+}
+.menu_container .plats :hover + .check {
+  transform: scaleX(4);
+}
+.menu_container .plats_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 95%;
+}
+.menu_container .plats .check {
+  transition: transform 300ms ease-in-out;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  background-color: #99E2D0;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.menu_container .plats_principale {
+  font-weight: bold;
+  margin: 2%;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu_container .plats_accompagnement {
+  margin: 2%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.menu_container .plats_prix {
+  font-weight: bold;
+  height: 20px;
+  margin: 2%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .bouton {
@@ -85,67 +152,22 @@ header a {
 }
 
 @media screen and (max-width: 600px) {
+  .plats {
+    width: 70%;
+  }
+
   .header img {
     width: 100%;
     position: absolute;
-  }
-
-  .menu_container {
-    margin-top: -5%;
-    padding-bottom: 5%;
-    width: 100%;
-  }
-  .menu_container .restaurant h1 {
-    margin-right: 4%;
-    font-size: 2.5rem;
-  }
-  .menu_container .restaurant .far {
-    font-size: 2rem;
-  }
-  .menu_container .menu {
-    padding-bottom: 1%;
-    margin: auto;
-    margin-bottom: 2%;
-    color: rgba(0, 0, 0, 0.65);
-    border-bottom: 3px solid #99E2D0;
-  }
-  .menu_container .plats {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 5px 10px 10px #e6e6e6;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    width: 70%;
-    height: 95px;
-  }
-  .menu_container .plats_principale {
-    font-weight: bold;
-    margin: 2%;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .menu_container .plats_accompagnement {
-    margin: 2%;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .menu_container .plats_prix {
-    font-weight: bold;
-    margin: 2%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
   }
 }
 @media screen and (min-width: 601px) {
   .container {
     margin: 0%;
+  }
+
+  .plats {
+    width: 500px;
   }
 
   header .fas {
@@ -157,64 +179,57 @@ header a {
     height: 250px;
     object-fit: cover;
   }
+}
+.page {
+  animation: page 2500ms 1.165s both;
+}
 
-  .menu_container {
-    margin-top: -5%;
-    padding-bottom: 5%;
-    width: 100%;
+@keyframes page {
+  0% {
+    opacity: 0;
   }
-  .menu_container .restaurant {
-    justify-content: center;
+  100% {
+    opacity: 1;
   }
-  .menu_container .restaurant h1 {
-    margin-right: 4%;
-    font-size: 2.5rem;
-  }
-  .menu_container .restaurant .far {
-    font-size: 2rem;
-  }
+}
+.load {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -25px;
+  margin-left: -45px;
+  width: 10vh;
+  height: 7.5vh;
+}
+.load_point {
+  top: 33px;
+  width: 1.5vh;
+  height: 1.5vh;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  animation: point 1s ease-in-out alternate both;
+}
+.load_point--1 {
+  animation-delay: 165ms;
+}
+.load_point--2 {
+  animation-delay: 330ms;
+}
+.load_point--3 {
+  animation-delay: 495ms;
+}
 
-  .menu {
-    padding-bottom: 1%;
-    margin: auto;
-    margin-bottom: 2%;
-    color: rgba(0, 0, 0, 0.65);
-    border-bottom: 3px solid #99E2D0;
+@keyframes point {
+  0% {
+    transform: scale(0);
   }
-
-  .plats {
-    background: white;
-    border-radius: 15px;
-    box-shadow: 5px 10px 10px #e6e6e6;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    width: 70%;
-    height: 95px;
-    width: 500px;
+  50% {
+    transform: scale(1);
   }
-  .plats_principale {
-    font-weight: bold;
-    margin: 2%;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .plats_accompagnement {
-    margin: 2%;
-    width: 300px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  .plats_prix {
-    font-weight: bold;
-    margin: 2%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  100% {
+    transform: scale(0);
   }
 }
 body {
@@ -642,6 +657,9 @@ footer .description {
     margin-left: 10%;
   }
 
+  .resto {
+    padding-bottom: 4%;
+  }
   .resto_titre {
     padding-top: 4%;
   }

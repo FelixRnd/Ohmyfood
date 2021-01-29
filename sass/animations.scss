@@ -1,0 +1,53 @@
+$num-point: 3;
+$anim-duree: 1s;
+$anim-delay: 165ms;
+$page-delay: $anim-duree + $anim-delay;
+
+.page {
+    animation: page 2500ms $page-delay both;
+}
+@keyframes page {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.load {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -25px;
+    margin-left: -45px;
+    width: 1vh*10;
+    height: 1vh*7.5;
+    &_point {
+    top: 33px;
+    width: 1.5vh;
+    height: 1.5vh;
+    border-radius: 50%;
+    background: linear-gradient(to bottom right, $colour-secondary, $colour-primary);
+    animation: point $anim-duree  ease-in-out alternate both;
+    @for $i from 1 through $num-point {
+        &--#{$i} {
+            animation-delay: $anim-delay * $i;
+        }
+    }
+  }
+}
+
+  @keyframes point {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }

@@ -19,6 +19,7 @@
 @import "./utils/fonctions.sass";
 @import "./utils/mixins.sass";
 @import "./restaurants.scss";
+@import "./animations.scss";
 
 
 body {
@@ -414,6 +415,7 @@ footer {
     }
 
     .resto {
+        padding-bottom: 4%;
         &_titre {
             padding-top: 4%;
         }
