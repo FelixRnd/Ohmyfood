@@ -9,14 +9,6 @@
   font-family: "shrikhand";
   src: url("/fonts/Shrikhand-Regular.otf");
 }
-@keyframes plats {
-  0% {
-    transform: scaleY(0);
-  }
-  100% {
-    transform: scaleY(1);
-  }
-}
 header a {
   height: 100%;
   margin-top: 5%;
@@ -37,6 +29,16 @@ header a {
   position: relative;
   border-radius: 25px 25px 0px 0px;
   background-color: #f7f7f7;
+  margin-top: -5%;
+  padding-bottom: 5%;
+  width: 100%;
+}
+.menu_container .restaurant h1 {
+  margin-right: 4%;
+  font-size: 2.5rem;
+}
+.menu_container .restaurant .far {
+  font-size: 2rem;
 }
 
 .restaurant {
@@ -50,55 +52,42 @@ header a {
   font-family: "shrikhand";
 }
 
-.menu_container {
-  margin-top: -5%;
-  padding-bottom: 5%;
-  width: 100%;
-}
-.menu_container .restaurant h1 {
-  margin-right: 4%;
-  font-size: 2.5rem;
-}
-.menu_container .restaurant .far {
-  font-size: 2rem;
-}
-.menu_container .menu {
+.menu {
   padding-bottom: 1%;
   margin: auto;
   margin-bottom: 2%;
   color: rgba(0, 0, 0, 0.65);
   border-bottom: 3px solid #99E2D0;
 }
-.menu_container .plats {
+
+.plats {
+  display: flex;
+  margin-bottom: 2%;
+}
+.plats:hover > .plats_check {
+  transform: scaleX(1);
+  opacity: 1;
+  transition: 1000ms;
+}
+.plats_list {
   background: white;
   border-radius: 15px;
   box-shadow: 5px 10px 10px #e6e6e6;
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 30px;
-  height: 75px;
-  transform-origin: 0% 100%;
-  animation: plats 1150ms;
+  width: 100%;
 }
-.menu_container .plats :hover + .check {
-  transform: scaleX(4);
+.plats_list:hover {
+  width: 85%;
 }
-.menu_container .plats_list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  width: 95%;
-}
-.menu_container .plats .check {
-  transition: transform 300ms ease-in-out;
-  transform: scaleX(0);
-  transform-origin: 100% 50%;
+.plats .plats_check {
   background-color: #99E2D0;
   color: white;
   display: flex;
   align-items: center;
+  width: 20px;
 }
-.menu_container .plats_principale {
+.plats_principale {
   font-weight: bold;
   margin: 2%;
   width: 100%;
@@ -106,13 +95,14 @@ header a {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.menu_container .plats_accompagnement {
+.plats_accompagnement {
   margin: 2%;
+  width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.menu_container .plats_prix {
+.plats_prix {
   font-weight: bold;
   height: 20px;
   margin: 2%;
@@ -124,7 +114,7 @@ header a {
 .bouton {
   border-radius: 35px;
   border: 0;
-  width: 250px;
+  width: 25%;
   height: 60px;
   margin: auto;
   color: white;
@@ -132,6 +122,9 @@ header a {
   box-shadow: 5px 10px 10px #e6e6e6;
   position: relative;
   z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .bouton:hover::after {
   opacity: 1;
@@ -180,10 +173,6 @@ header a {
     object-fit: cover;
   }
 }
-.page {
-  animation: page 2500ms 1.165s both;
-}
-
 @keyframes page {
   0% {
     opacity: 0;
@@ -192,6 +181,21 @@ header a {
     opacity: 1;
   }
 }
+@keyframes point {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.page {
+  animation: page 2500ms 1.165s both;
+}
+
 .load {
   display: flex;
   justify-content: space-between;
@@ -221,17 +225,6 @@ header a {
   animation-delay: 495ms;
 }
 
-@keyframes point {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
 body {
   width: 100%;
   margin: 0;
@@ -270,7 +263,7 @@ header img {
 .explor .bouton {
   border-radius: 35px;
   border: 0;
-  width: 250px;
+  width: 25%;
   height: 60px;
   margin: auto;
   color: white;
@@ -278,6 +271,9 @@ header img {
   box-shadow: 5px 10px 10px #e6e6e6;
   position: relative;
   z-index: 1;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .explor .bouton:hover::after {
   opacity: 1;
@@ -375,18 +371,20 @@ header img {
 .resto_list-description .coeur .far {
   position: absolute;
   color: black;
-  opacity: 1;
+  z-index: 1;
 }
 .resto_list-description .coeur .far:hover {
-  color: white;
+  z-index: 0;
   opacity: 0;
 }
 .resto_list-description .coeur .fas {
   position: relative;
-  opacity: 0;
   transition: opacity 350ms;
+  z-index: 0;
+  opacity: 0;
 }
 .resto_list-description .coeur .fas:hover {
+  z-index: 1;
   opacity: 1;
   color: #9356DC;
 }
@@ -563,10 +561,6 @@ footer .description {
 
   .explor {
     height: 275px;
-  }
-
-  .bouton {
-    width: 25%;
   }
 
   .step_titre {

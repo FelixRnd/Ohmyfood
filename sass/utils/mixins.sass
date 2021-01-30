@@ -1,7 +1,7 @@
 @mixin bouton
     border-radius: 35px
     border: 0
-    width: 250px
+    width: 25%
     height: 60px
     margin: auto
     color: white
@@ -9,6 +9,9 @@
     box-shadow: 5px 10px 10px rgb(230, 230, 230)
     position: relative
     z-index: 1
+    cursor: pointer
+    overflow: hidden
+    text-overflow: ellipsis
 
 @mixin step($colour)
     display: flex
@@ -27,14 +30,13 @@
     color: rgba(0, 0, 0, 0.650)
     border-bottom: 3px solid $colour
 
-@mixin plats
+@mixin plats_list
     background: white
     border-radius: 15px
     box-shadow: 5px 10px 10px rgb(230, 230, 230)
     display: flex
     flex-wrap: wrap
-    margin-bottom: 30px
-    height: 75px
+    width: 100%
 @mixin principale
     font-weight: bold
     margin: 2%
@@ -44,6 +46,7 @@
     white-space: nowrap
 @mixin accompagnement
     margin: 2%
+    width: 80%
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap

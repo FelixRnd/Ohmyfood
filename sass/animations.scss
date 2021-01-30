@@ -1,18 +1,26 @@
-$num-point: 3;
-$anim-duree: 1s;
-$anim-delay: 165ms;
-$page-delay: $anim-duree + $anim-delay;
+@keyframes page {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes point {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+      transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
 
 .page {
     animation: page 2500ms $page-delay both;
-}
-@keyframes page {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 
 .load {
@@ -39,15 +47,3 @@ $page-delay: $anim-duree + $anim-delay;
     }
   }
 }
-
-  @keyframes point {
-    0% {
-      transform: scale(0);
-    }
-    50% {
-        transform: scale(1);
-    }
-    100% {
-      transform: scale(0);
-    }
-  }
