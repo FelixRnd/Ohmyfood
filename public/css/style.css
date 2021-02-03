@@ -9,6 +9,14 @@
   font-family: "shrikhand";
   src: url("/fonts/Shrikhand-Regular.otf");
 }
+@keyframes check {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
 header a {
   height: 100%;
   margin-top: 5%;
@@ -61,31 +69,39 @@ header a {
 }
 
 .plats {
-  display: flex;
-  margin-bottom: 2%;
-}
-.plats:hover > .plats_check {
-  transform: scaleX(1);
-  opacity: 1;
-  transition: 1000ms;
-}
-.plats_list {
   background: white;
   border-radius: 15px;
   box-shadow: 5px 10px 10px #e6e6e6;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
+  margin-bottom: 2%;
 }
-.plats_list:hover {
-  width: 85%;
+.plats:hover {
+  transform-origin: 0%;
+  transform: scaleX(0.9);
+  transition: transform 350ms linear;
+}
+.plats:hover .plats_check {
+  transition: 350ms;
+  display: inline-flex;
+  transform-origin: 0%;
+  transform: scaleX(1.4);
+}
+.plats:hover .plats_check i {
+  animation: check 350ms;
 }
 .plats .plats_check {
   background-color: #99E2D0;
   color: white;
-  display: flex;
   align-items: center;
-  width: 20px;
+  justify-content: center;
+  width: 50px;
+  height: 78px;
+  display: inline-flex;
+  position: absolute;
+  left: 70%;
 }
 .plats_principale {
   font-weight: bold;
@@ -97,7 +113,6 @@ header a {
 }
 .plats_accompagnement {
   margin: 2%;
-  width: 80%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -362,6 +377,14 @@ header img {
   border-radius: 25px;
   box-shadow: 5px 10px 10px #e6e6e6;
 }
+.resto_list-img .nouveau {
+  padding: 2%;
+  position: relative;
+  font-weight: 1em;
+  font-weight: bold;
+  color: #5b867c;
+  background-color: #99E2D0;
+}
 .resto_list-description {
   display: flex;
   flex-direction: wrap;
@@ -376,9 +399,10 @@ header img {
 .resto_list-description .coeur .far:hover {
   z-index: 0;
   opacity: 0;
+  color: white;
 }
 .resto_list-description .coeur .fas {
-  position: relative;
+  position: absolute;
   transition: opacity 350ms;
   z-index: 0;
   opacity: 0;
@@ -508,17 +532,25 @@ footer .description {
   .resto_list {
     height: 375px;
   }
-  .resto_list-description .titre {
-    margin-left: 4%;
-  }
-  .resto_list-description .coeur {
-    margin-right: 8%;
-    font-size: 2rem;
+  .resto_list-img {
+    height: 275px;
   }
   .resto_list-img img {
     border-radius: 25px 25px 0px 0px;
     width: 100%;
     height: 275px;
+  }
+  .resto_list-img .nouveau {
+    left: 70%;
+    top: -250px;
+  }
+  .resto_list-description .titre {
+    margin-left: 4%;
+  }
+  .resto_list-description .coeur {
+    margin-bottom: 4%;
+    margin-right: 15%;
+    font-size: 2rem;
   }
 
   footer {
@@ -661,18 +693,26 @@ footer .description {
     width: 50%;
     margin-bottom: 2%;
   }
-  .resto_list-description .titre {
-    margin-left: 4%;
-  }
-  .resto_list-description .coeur {
-    margin-right: 8%;
-    font-size: 2rem;
+  .resto_list-img {
+    height: 275px;
   }
   .resto_list-img img {
     object-fit: cover;
     border-radius: 25px 25px 0px 0px;
     width: 100%;
     height: 275px;
+  }
+  .resto_list-img .nouveau {
+    left: 74%;
+    top: -250px;
+  }
+  .resto_list-description .titre {
+    margin-left: 4%;
+  }
+  .resto_list-description .coeur {
+    margin-bottom: 4%;
+    margin-right: 15%;
+    font-size: 2rem;
   }
 
   footer {

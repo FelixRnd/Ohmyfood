@@ -1,3 +1,13 @@
+@keyframes check {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
 header {
     & a {
         height: 100%;
@@ -50,27 +60,31 @@ header {
     }
 
     .plats {
-        display: flex;
-        margin-bottom: 2%;
+        @include plats;
         &:hover {
-            & > .plats_check {
-                transform: scaleX(1);
-                opacity: 1;
-                transition: 1000ms
-            }
-        }
-        &_list {
-            @include plats_list;
-            &:hover {
-                width: 85%;
+            transform-origin: 0%;
+            transform: scaleX(0.9);
+            transition: transform 350ms linear;
+            & .plats_check {
+                transition: 350ms;
+                display: inline-flex;
+                transform-origin: 0%;
+                transform: scaleX(1.4);
+                & i {
+                    animation: check 350ms;
+                }
             }
         }
         & .plats_check {
             background-color: $colour-tertiary;
             color: white;
-            display: flex;
             align-items: center;
-            width: 20px
+            justify-content: center;
+            width: 50px;
+            height: 78px;
+            display: inline-flex;
+            position: absolute;
+            left: 70%;
         }
         &_principale {
             @include principale;
