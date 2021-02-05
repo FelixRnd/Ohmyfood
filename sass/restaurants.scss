@@ -1,10 +1,10 @@
 @keyframes check {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(-360deg);
     }
 
     100% {
-        transform: rotate(-360deg);
+        transform: rotate(0deg);
     }
 }
 
@@ -62,18 +62,24 @@ header {
     .plats {
         @include plats;
         &:hover {
-            transform-origin: 0%;
-            transform: scaleX(0.9);
-            transition: transform 350ms linear;
+            &_container {
+                width: 85%;
+            }
             & .plats_check {
-                transition: 350ms;
+                transition: transform 500ms;
                 display: inline-flex;
-                transform-origin: 0%;
-                transform: scaleX(1.4);
                 & i {
-                    animation: check 350ms;
+                    animation: check 0.5s linear;
                 }
             }
+        }
+        &_container {
+            display: flex;
+            flex-direction: column;
+        }
+        &_container-left {
+            display: flex;
+            flex-direction: row;
         }
         & .plats_check {
             background-color: $colour-tertiary;
@@ -82,8 +88,7 @@ header {
             justify-content: center;
             width: 50px;
             height: 78px;
-            display: inline-flex;
-            position: absolute;
+            display: none;
             left: 70%;
         }
         &_principale {

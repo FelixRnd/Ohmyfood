@@ -84,10 +84,10 @@ header a {
   transition: transform 350ms linear;
 }
 .plats:hover .plats_check {
-  transition: 350ms;
+  transition: transform 500ms;
   display: inline-flex;
-  transform-origin: 0%;
-  transform: scaleX(1.4);
+  transform-origin: 100%;
+  transform: scaleX(1.6);
 }
 .plats:hover .plats_check i {
   animation: check 350ms;
