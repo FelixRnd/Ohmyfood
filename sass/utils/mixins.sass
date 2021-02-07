@@ -1,12 +1,13 @@
 @mixin bouton
-    border-radius: 35px
+    border-radius: 45px
     border: 0
-    width: 25%
-    height: 60px
+    width: 240px
+    height: 75px
     margin: auto
+    font-size: 1em
     color: white
     background: linear-gradient(to bottom right, $colour-secondary, $colour-primary)
-    box-shadow: 5px 10px 10px rgb(230, 230, 230)
+    box-shadow: 5px 10px 10px 2px rgb(230, 230, 230)
     position: relative
     z-index: 1
     cursor: pointer
@@ -35,25 +36,30 @@
     border-radius: 15px
     box-shadow: 5px 10px 10px rgb(230, 230, 230)
     display: flex
-    flex-wrap: wrap
+    flex-wrap: no-wrap
     flex-direction: row
     justify-content: space-between
     width: 100%
+    height: 75px
     margin-bottom: 2%
+    overflow: hidden
+    text-overflow: ellipsis
+    white-space: nowrap
 @mixin principale
     font-weight: bold
     margin: 2%
-    width: 100%
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
 @mixin accompagnement
+    width: 300px
     margin: 2%
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
 @mixin prix
     font-weight: bold
+    width: 50px
     height: 20px
     margin: 2%
     overflow: hidden

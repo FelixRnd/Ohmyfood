@@ -1,10 +1,20 @@
-@keyframes check {
+@keyframes icheck {
     0% {
         transform: rotate(-360deg);
     }
 
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@keyframes check {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
     }
 }
 
@@ -62,34 +72,40 @@ header {
     .plats {
         @include plats;
         &:hover {
-            &_container {
-                width: 85%;
-            }
             & .plats_check {
-                transition: transform 500ms;
+                animation: check 400ms linear;
+                transform-origin: 100%;
                 display: inline-flex;
                 & i {
-                    animation: check 0.5s linear;
+                    animation: icheck 400ms linear;
                 }
             }
         }
         &_container {
             display: flex;
             flex-direction: column;
+            justify-content: space-around;
+            margin: 1%;
         }
         &_container-left {
             display: flex;
             flex-direction: row;
+            & .plats_prix {
+                display: flex;
+                margin-top: 45px;
+                margin-right: 20px;
+            }
         }
         & .plats_check {
             background-color: $colour-tertiary;
             color: white;
             align-items: center;
             justify-content: center;
-            width: 50px;
-            height: 78px;
+            width: 100px;
+            height: 100%;
             display: none;
             left: 70%;
+            border-radius: 0px 15px 15px 0px
         }
         &_principale {
             @include principale;
@@ -106,9 +122,10 @@ header {
 .bouton {
     @include bouton;
     &:hover {
-        &::after {
-            opacity: 1;
-        }
+        background: linear-gradient(to bottom right, lighten($colour-secondary, 4) 0%, lighten($colour-primary, 4) 100%);
+        transition: opacity 250ms;
+        border-radius: 35px;
+        box-shadow: 5px 10px 10px 2px rgb(224, 224, 224);
     }
     &::after {
         content: "";

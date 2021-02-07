@@ -30,6 +30,7 @@ body {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 header {
@@ -61,23 +62,10 @@ header {
     & .bouton {
         @include bouton;
         &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
             background: linear-gradient(to bottom right, lighten($colour-secondary, 4) 0%, lighten($colour-primary, 4) 100%);
-            opacity: 0;
-            z-index: -1;
             transition: opacity 250ms;
             border-radius: 35px;
-            box-shadow: 5px 10px 10px 3px rgb(221, 221, 221);
+            box-shadow: 5px 10px 10px 2px rgb(224, 224, 224);
         }
     }
 }
@@ -94,6 +82,7 @@ header {
             position: relative;
             border-radius: 20px;
             background-color: $colour-primary;
+            color: white;
         }
         & i {
             display: flex;
@@ -115,6 +104,7 @@ header {
             position: relative;
             border-radius: 20px ;
             background-color: $colour-primary;
+            color: white;
         }
         & i {
             display: flex;
@@ -136,6 +126,7 @@ header {
             position: relative;
             border-radius: 20px;
             background-color: $colour-primary;
+            color: white;
         }
         & i {
             display: flex;
@@ -185,7 +176,7 @@ header {
                 }
                 & .fas {
                     position: absolute;
-                    transition: opacity 350ms;
+                    transition: opacity 600ms;
                     z-index: 0;
                     opacity: 0;
                     &:hover {
