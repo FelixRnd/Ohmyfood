@@ -12,14 +12,14 @@
 
 @font-face {
     font-family: 'shrikhand';
-    src: url('/fonts/Shrikhand-Regular.otf');
+    src: url('fonts/Shrikhand-Regular.otf');
 }
 
-@import "./utils/variables.sass";
-@import "./utils/fonctions.sass";
-@import "./utils/mixins.sass";
-@import "./restaurants.scss";
-@import "./animations.scss";
+@import "/utils/variables.sass";
+@import "/utils/fonctions.sass";
+@import "/utils/mixins.sass";
+@import "/restaurants.scss";
+@import "/animations.scss";
 
 
 body {
