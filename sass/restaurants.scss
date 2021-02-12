@@ -18,6 +18,16 @@
     }
 }
 
+@keyframes apparition-plats {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 header {
     & a {
         height: 100%;
@@ -71,6 +81,8 @@ header {
 
     .plats {
         @include plats;
+        animation: apparition-plats 2s linear;
+        transform-origin: 0% 0%;
         &:hover {
             & .plats_check {
                 animation: check 400ms linear;
