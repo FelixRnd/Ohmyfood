@@ -397,6 +397,7 @@ header img {
   background-color: white;
   border-radius: 25px;
   box-shadow: 5px 10px 10px #e6e6e6;
+  cursor: pointer;
 }
 .resto_list-img .nouveau {
   padding: 2%;
