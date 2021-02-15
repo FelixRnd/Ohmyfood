@@ -84,6 +84,21 @@ header a {
   border-bottom: 3px solid #99E2D0;
 }
 
+.apparition_entrees {
+  animation: apparition-plats 1s ease-in;
+  transform-origin: 0% 0%;
+}
+
+.apparition_plats {
+  animation: apparition-plats 1.5s ease-in;
+  transform-origin: 0% 0%;
+}
+
+.apparition_desserts {
+  animation: apparition-plats 2s ease-in;
+  transform-origin: 0% 0%;
+}
+
 .plats {
   background: white;
   border-radius: 15px;
@@ -98,8 +113,6 @@ header a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  animation: apparition-plats 2s linear;
-  transform-origin: 0% 0%;
 }
 .plats:hover .plats_check {
   animation: check 400ms linear;
@@ -398,10 +411,14 @@ header img {
   border-radius: 25px;
   box-shadow: 5px 10px 10px #e6e6e6;
   cursor: pointer;
+  position: relative;
+}
+.resto_list-img img {
+  object-fit: cover;
 }
 .resto_list-img .nouveau {
   padding: 2%;
-  position: relative;
+  position: absolute;
   font-weight: 1em;
   font-weight: bold;
   color: #5b867c;
@@ -563,8 +580,8 @@ footer .description {
     height: 275px;
   }
   .resto_list-img .nouveau {
-    left: 70%;
-    top: -250px;
+    right: 20px;
+    top: 20px;
   }
   .resto_list-description .titre {
     margin-left: 4%;
@@ -719,14 +736,13 @@ footer .description {
     height: 275px;
   }
   .resto_list-img img {
-    object-fit: cover;
     border-radius: 25px 25px 0px 0px;
     width: 100%;
     height: 275px;
   }
   .resto_list-img .nouveau {
-    left: 74%;
-    top: -250px;
+    right: 20px;
+    top: 20px;
   }
   .resto_list-description .titre {
     margin-left: 4%;

@@ -79,10 +79,20 @@ header {
         @include menu($colour-tertiary);
     }
 
+    .apparition_entrees {
+        animation: apparition-plats 1s ease-in;
+        transform-origin: 0% 0%;
+    }
+    .apparition_plats {
+        animation: apparition-plats 1.5s ease-in;
+        transform-origin: 0% 0%;
+    }
+    .apparition_desserts {
+        animation: apparition-plats 2s ease-in;
+        transform-origin: 0% 0%;
+    }
     .plats {
         @include plats;
-        animation: apparition-plats 2s linear;
-        transform-origin: 0% 0%;
         &:hover {
             & .plats_check {
                 animation: check 400ms linear;
