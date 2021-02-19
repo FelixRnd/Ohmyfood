@@ -198,10 +198,24 @@ header {
 }
 
 footer {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.699);
     color: white;
+    & .ohmyfood {
+        padding-top: 10px;
+        font-size: 2rem;
+        margin-left: 9%;
+        font-style: italic;
+        font-weight: bold;
+        font-family: 'shrikhand';
+    }
     & .description {
         display: flex;
+        margin-left: 9%;
     }
 }
 
@@ -318,23 +332,7 @@ footer {
         }
     }
 
-    footer {
-        height: 250px;
-        & .ohmyfood {
-            font-size: 2rem;
-            margin-left: 9%;
-            margin-bottom: 4%;
-            padding-top: 4%;
-            font-style: italic;
-            font-weight: bold;
-            font-family: 'shrikhand';
-        }
-        & .description {
-            display: flex;
-            margin-left: 9%;
-            margin-bottom: 4%;
-        }
-    }
+
 }
 
 @media screen and (min-width: 601px) {
@@ -462,21 +460,4 @@ footer {
         }
     }
 
-    footer {
-        height: 350px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        & .ohmyfood {
-            font-size: 2rem;
-            margin-left: 9%;
-            font-style: italic;
-            font-weight: bold;
-            font-family: 'shrikhand';
-        }
-        & .description {
-            display: flex;
-            margin-left: 9%;
-        }
-    }
 }

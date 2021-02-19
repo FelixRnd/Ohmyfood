@@ -18,18 +18,12 @@
   }
 }
 .photos_resto img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.photo {
   object-fit: cover;
   height: 200px;
   width: 100%;
 }
 @media (min-width: 1024px) {
-  .photo {
+  .photos_resto img {
     height: 323px;
   }
 }
@@ -122,7 +116,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 10px;
   width: 100%;
 }
 @media (min-width: 801px) {
@@ -147,13 +140,14 @@
   width: 100%;
 }
 .menu__carte__blockentrees__title {
-  font-family: "Roboto", sans-serif;
+  font-family: "robotoregular", sans-serif;
   font-weight: 300;
   font-size: 16px;
   margin: 5px 0px;
   text-transform: capitalize;
   position: relative;
   margin-bottom: 20px;
+  margin-left: 20px;
 }
 .menu__carte__blockentrees__title__dot {
   position: absolute;
@@ -169,11 +163,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  height: 60px;
+  width: 90%;
+  height: 65px;
   border-radius: 10px;
   box-shadow: 0 3px 8px -2px grey;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
+  margin-left: 15px;
 }
 .menu__carte__blockentrees__entree__separtor {
   display: none;
@@ -186,9 +181,6 @@
   overflow: hidden;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: red;
-  /* default color */
-  /* "to left" / "to right" - affects initial color */
   background: linear-gradient(to right, #f5f5f5 50%, #99e2d0 50%) left;
   background-size: 200%;
   transition: 0.5s ease-out;
@@ -200,11 +192,11 @@
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  width: 100%;
-  height: 60px;
+  width: 90%;
+  height: 65px;
   border-radius: 10px;
   box-shadow: 0 3px 8px -2px grey;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 .menu__carte__blockentrees__entree:hover .menu__carte__blockentrees__entree__separator {
   display: flex;
@@ -223,7 +215,7 @@
 .menu__carte__blockentrees__entree__text {
   margin-left: 10px;
   margin-bottom: 5px;
-  font-family: "Roboto", sans-serif;
+  font-family: "robotoregular", sans-serif;
   font-weight: 500;
   font-size: 16px;
 }
@@ -234,7 +226,7 @@
 }
 .menu__carte__blockentrees__entree__description__text {
   margin-left: 10px;
-  font-family: "Roboto", sans-serif;
+  font-family: "robotoregular", sans-serif;
   font-weight: 300;
   font-size: 14px;
   text-overflow: ellipsis;
@@ -244,7 +236,7 @@
   white-space: nowrap;
 }
 .menu__carte__blockentrees__entree__description__price {
-  font-family: "Roboto", sans-serif;
+  font-family: "robotoregular", sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -299,17 +291,6 @@
   transition: opacity 250ms;
   border-radius: 35px;
   box-shadow: 5px 10px 10px 2px #e0e0e0;
-}
-
-.footer {
-  width: 100%;
-  height: 300px;
-}
-.footer h2 {
-  font-family: "shrikhand", Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-}
-.footer a {
-  color: white;
 }
 
 @keyframes page {
@@ -537,11 +518,25 @@ header img {
 }
 
 footer {
+  width: 100%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: rgba(0, 0, 0, 0.699);
   color: white;
 }
+footer .ohmyfood {
+  padding-top: 10px;
+  font-size: 2rem;
+  margin-left: 9%;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "shrikhand";
+}
 footer .description {
   display: flex;
+  margin-left: 9%;
 }
 
 @media screen and (max-width: 600px) {
@@ -674,24 +669,6 @@ footer .description {
     margin-bottom: 4%;
     margin-right: 15%;
     font-size: 2rem;
-  }
-
-  footer {
-    height: 250px;
-  }
-  footer .ohmyfood {
-    font-size: 2rem;
-    margin-left: 9%;
-    margin-bottom: 4%;
-    padding-top: 4%;
-    font-style: italic;
-    font-weight: bold;
-    font-family: "shrikhand";
-  }
-  footer .description {
-    display: flex;
-    margin-left: 9%;
-    margin-bottom: 4%;
   }
 }
 @media screen and (min-width: 601px) {
@@ -835,24 +812,6 @@ footer .description {
     margin-bottom: 4%;
     margin-right: 15%;
     font-size: 2rem;
-  }
-
-  footer {
-    height: 350px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  footer .ohmyfood {
-    font-size: 2rem;
-    margin-left: 9%;
-    font-style: italic;
-    font-weight: bold;
-    font-family: "shrikhand";
-  }
-  footer .description {
-    display: flex;
-    margin-left: 9%;
   }
 }
 

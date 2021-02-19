@@ -10,20 +10,16 @@
 
 .photos_resto {
     & img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
+        object-fit: cover;
+        height: 200px;
+        width: 100%;
+        @media (min-width: 1024px) {
+        height: 323px;
+        }
     }
 }
 
-.photo {
-    object-fit: cover;
-    height: 200px;
-    width: 100%;
-    @media (min-width: 1024px) {
-    height: 323px;
-    }
-   }
+
    
    .menucontainer {
     height: 100%;
@@ -48,53 +44,53 @@
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     position: absolute;
-    &__blockrestaurantname {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 70px;
-    margin: 15px 0px;
-    position: relative;
-    &__title {
-    font-family: "Shrikhand", cursive;
-    font-size: 30px;
-    margin: 0px 0px 0px 20px;
-    @media (min-width: 801px) {
-    font-size: 26px;
-    }
-    @media (min-width: 1024px) {
-    font-size: 32px;
-    }
-    @media (min-width: 1400px) {
-    font-size: 36px;
-    }
+        &__blockrestaurantname {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            margin: 15px 0px;
+            position: relative;
+        &__title {
+            font-family: "Shrikhand", cursive;
+            font-size: 30px;
+            margin: 0px 0px 0px 20px;
+            @media (min-width: 801px) {
+            font-size: 26px;
+        }
+            @media (min-width: 1024px) {
+            font-size: 32px;
+        }
+            @media (min-width: 1400px) {
+            font-size: 36px;
+        }
     }
     &__blocklogo {
-    display: flex;
-    width: 100px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+        display: flex;
+        width: 100px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
     &__logo {
-    position: absolute;
-    left: 39px;
-    z-index: 1;
-    transition: transform 450ms, background-color 300ms 150ms;
+        position: absolute;
+        left: 39px;
+        z-index: 1;
+        transition: transform 450ms, background-color 300ms 150ms;
     &:hover {
-    z-index: 0;
+        z-index: 0;
     }
-    }
+}
     &__logo2 {
-    position: absolute;
-    color: white;
-    z-index: 0;
+        position: absolute;
+        color: white;
+        z-index: 0;
     &:hover {
-    z-index: 1;
-    transition: color 1.5s ease;
-    color: $colour-primary;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: $colour-primary;
+        z-index: 1;
+        transition: color 1.5s ease;
+        color: $colour-primary;
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: $colour-primary;
     }
     }
     }
@@ -103,7 +99,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin: 10px;
     width: 100%;
     @media (min-width: 801px) {
         width: 50%;
@@ -120,13 +115,14 @@
     justify-content: center;
     width: 100%;
     &__title {
-    font-family: "Roboto", sans-serif;
+    font-family: 'robotoregular', sans-serif;
     font-weight: 300;
     font-size: 16px;
     margin: 5px 0px;
     text-transform: capitalize;
     position: relative;
     margin-bottom: 20px;
+    margin-left: 20px;
     &__dot {
     position: absolute;
     left: 0;
@@ -141,11 +137,12 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 100%;
-    height: 60px;
+    width: 90%;
+    height: 65px;
     border-radius: 10px;
     box-shadow: 0 3px 8px -2px grey;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
+    margin-left: 15px;
     &__separtor {
     display: none;
     }
@@ -157,9 +154,6 @@
     overflow: hidden;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
-    background: red; /* default color */
-   
-    /* "to left" / "to right" - affects initial color */
     background: linear-gradient(
     to right,
     $colour-whitegrey 50%,
@@ -176,11 +170,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    width: 100%;
-    height: 60px;
+    width: 90%;
+    height: 65px;
     border-radius: 10px;
     box-shadow: 0 3px 8px -2px grey;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     .menu__carte__blockentrees__entree__separator {
     display: flex;
     flex-direction: column;
@@ -199,7 +193,7 @@
     &__text {
     margin-left: 10px;
     margin-bottom: 5px;
-    font-family: "Roboto", sans-serif;
+    font-family: 'robotoregular', sans-serif;
     font-weight: 500;
     font-size: 16px;
     }
@@ -209,7 +203,7 @@
     width: calc(100% - 20px);
     &__text {
     margin-left: 10px;
-    font-family: "Roboto", sans-serif;
+    font-family: 'robotoregular', sans-serif;
     font-weight: 300;
     font-size: 14px;
     text-overflow: ellipsis;
@@ -219,7 +213,7 @@
     white-space: nowrap;
     }
     &__price {
-    font-family: "Roboto", sans-serif;
+    font-family: 'robotoregular', sans-serif;
     font-weight: 500;
     font-size: 14px;
     }
@@ -262,13 +256,3 @@
         box-shadow: 5px 10px 10px 2px rgb(224, 224, 224);
     }
    }
-   .footer {
-    width: 100%;
-    height: 300px;
-    h2 {
-            font-family: 'shrikhand', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    a {
-        color: white;
-    }
-}
